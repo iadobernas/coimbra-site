@@ -84,9 +84,10 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {categories.map((cat) => (
-              <div
+              <a
                 key={cat.title}
-                className="group p-6 rounded-2xl bg-white shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                href="/catalogo"
+                className="group p-6 rounded-2xl bg-white shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 block"
                 style={{ borderLeft: `4px solid ${cat.borderColor}` }}
               >
                 <div
@@ -97,7 +98,7 @@ export default function Home() {
                 </div>
                 <h3 className="font-bold text-gray-900 text-lg mb-2">{cat.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{cat.description}</p>
-              </div>
+              </a>
             ))}
           </div>
         </div>

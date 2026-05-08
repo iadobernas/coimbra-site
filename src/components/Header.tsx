@@ -3,16 +3,18 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 
 const navLinks = [
-  { label: 'Início', href: '#' },
-  { label: 'Quem Somos', href: '#' },
-  { label: 'Catálogo', href: '#' },
-  { label: 'Contato', href: '#' },
+  { label: 'Início', href: '/' },
+  { label: 'Quem Somos', href: '/quem-somos' },
+  { label: 'Catálogo', href: '/catalogo' },
+  { label: 'Contato', href: '/contato' },
 ]
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
@@ -31,15 +33,22 @@ export default function Header() {
           </Link>
 
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-gray-600 hover:text-brand-green font-medium transition-colors duration-200"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = pathname === link.href
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={`font-medium transition-colors duration-200 ${
+                    active
+                      ? 'text-[#1a6b3a]'
+                      : 'text-gray-600 hover:text-[#1a6b3a]'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )
+            })}
           </nav>
 
           <div className="hidden md:flex items-center">
@@ -47,7 +56,7 @@ export default function Header() {
               href="https://wa.me/5531347415333"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-brand-green hover:bg-brand-green-dark text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors duration-200 flex items-center gap-2"
+              className="bg-[#1a6b3a] hover:bg-[#155c30] text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors duration-200 flex items-center gap-2"
             >
               <WhatsAppIcon />
               WhatsApp
@@ -74,21 +83,28 @@ export default function Header() {
       {menuOpen && (
         <div className="md:hidden border-t border-gray-100 bg-white">
           <nav className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="block px-4 py-3 rounded-lg text-gray-700 font-medium hover:bg-gray-50 hover:text-brand-green transition-colors"
-                onClick={() => setMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = pathname === link.href
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={`block px-4 py-3 rounded-lg font-medium transition-colors ${
+                    active
+                      ? 'bg-[#e8f5ee] text-[#1a6b3a]'
+                      : 'text-gray-700 hover:bg-gray-50 hover:text-[#1a6b3a]'
+                  }`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              )
+            })}
             <a
               href="https://wa.me/5531347415333"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-2 flex items-center justify-center gap-2 bg-brand-green text-white py-3 px-4 rounded-lg font-semibold"
+              className="mt-2 flex items-center justify-center gap-2 bg-[#1a6b3a] text-white py-3 px-4 rounded-lg font-semibold"
               onClick={() => setMenuOpen(false)}
             >
               <WhatsAppIcon />

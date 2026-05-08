@@ -57,13 +57,13 @@ export default function HeroSection() {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="#"
+              href="/catalogo"
               className="inline-flex items-center justify-center bg-white text-[#1a6b3a] font-semibold px-8 py-3 rounded-lg transition-colors duration-200 hover:bg-gray-100"
             >
               Ver Catálogo
             </Link>
             <Link
-              href="#"
+              href="/contato"
               className="inline-flex items-center justify-center border-2 border-white text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200 hover:bg-white/20"
             >
               Fale Conosco
