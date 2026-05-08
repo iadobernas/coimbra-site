@@ -30,8 +30,9 @@ export default function ContatoPage() {
                   label="Endereço"
                   content={
                     <>
-                      Rua Paulo Piedade Campos, 139<br />
-                      Estoril, Belo Horizonte – MG
+                      Av. Brigadeiro Eduardo Gomes, 1472<br />
+                      Glória, Belo Horizonte – MG<br />
+                      CEP: 30830-340
                     </>
                   }
                 />
@@ -61,8 +62,18 @@ export default function ContatoPage() {
                 />
                 <ContactItem
                   icon={<ClockIcon />}
-                  label="Horário de atendimento"
-                  content="Segunda a Sexta, 08h às 18h"
+                  label="Compras no Atacado"
+                  content="Segunda a Sexta · 08h às 18h"
+                />
+                <ContactItem
+                  icon={<ClockIcon />}
+                  label="Varejo / Loja"
+                  content={
+                    <>
+                      Segunda a Sexta · 08h às 18h<br />
+                      Sábado · 08h às 13h
+                    </>
+                  }
                 />
               </div>
 
@@ -99,7 +110,7 @@ export default function ContatoPage() {
       <section>
         <iframe
           title="Localização Coimbra Produtos de Limpeza"
-          src="https://maps.google.com/maps?q=Rua+Paulo+Piedade+Campos,+139,+Estoril,+Belo+Horizonte,+MG,+Brasil&output=embed&z=16"
+          src="https://maps.google.com/maps?q=Av.+Brigadeiro+Eduardo+Gomes,+1472,+Glória,+Belo+Horizonte,+MG,+Brasil&output=embed&z=16"
           width="100%"
           height="420"
           style={{ border: 0, display: 'block' }}

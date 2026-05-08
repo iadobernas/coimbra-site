@@ -67,7 +67,7 @@ export default function QuemSomosPage() {
               a empresa cresceu com sólidos alicerces de qualidade e confiança.
             </p>
             <p>
-              Com sede no bairro Estoril, atende clientes do uso doméstico ao industrial, com mais de
+              Com sede no bairro Glória, atende clientes do uso doméstico ao industrial, com mais de
               50 produtos certificados pela Vigilância Sanitária. Nossa filosofia combina qualidade com
               custo-benefício — garantindo máximo desempenho ao melhor preço.
             </p>
