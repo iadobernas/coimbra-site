@@ -73,7 +73,7 @@ export const produtos: Produto[] = [
   {
     id: '1',
     nome: 'Alvejam',
-    categoria: 'Lavanderia',
+    categoria: 'Limpeza e Conservação',
     descricao: 'Alvejante líquido para branqueamento e desinfecção de tecidos.',
     icone: '🧺',
     slug: 'alvejam',
@@ -99,7 +99,7 @@ export const produtos: Produto[] = [
   {
     id: '2',
     nome: 'Chassidol NC',
-    categoria: 'Limpeza e Conservação',
+    categoria: 'Automotivo',
     descricao: 'Limpador neutro concentrado de alto desempenho para pisos e superfícies.',
     icone: '🧹',
     slug: 'chassidol-nc',
@@ -151,7 +151,7 @@ export const produtos: Produto[] = [
   {
     id: '4',
     nome: 'Coimbril Super',
-    categoria: 'Tratamento de Piso',
+    categoria: 'Industrial',
     descricao: 'Produto superior para cristalização e impermeabilização de pisos nobres.',
     icone: '💎',
     slug: 'coimbril-super',
@@ -177,7 +177,7 @@ export const produtos: Produto[] = [
   {
     id: '5',
     nome: 'Concrespan',
-    categoria: 'Pós Obra',
+    categoria: 'Industrial',
     descricao: 'Remove resíduos de cimento, argamassa e eflorescências de obras recentes.',
     icone: '🏗️',
     slug: 'concrespan',
@@ -203,7 +203,7 @@ export const produtos: Produto[] = [
   {
     id: '6',
     nome: 'Degras 275 Viscoso',
-    categoria: 'Industrial',
+    categoria: 'Automotivo',
     descricao: 'Desengraxante viscoso de alta performance para uso industrial.',
     icone: '⚙️',
     slug: 'degras-275-viscoso',
@@ -229,7 +229,7 @@ export const produtos: Produto[] = [
   {
     id: '7',
     nome: 'Detergente Clorado Solmix',
-    categoria: 'Cozinha',
+    categoria: 'Automotivo',
     descricao: 'Detergente clorado para higienização de utensílios e superfícies de cozinha.',
     icone: '🍽️',
     slug: 'detergente-clorado-solmix',
@@ -281,7 +281,7 @@ export const produtos: Produto[] = [
   {
     id: '9',
     nome: 'Eletro Span',
-    categoria: 'Industrial',
+    categoria: 'Automotivo',
     descricao: 'Limpador especializado para equipamentos elétricos e eletrônicos.',
     icone: '⚡',
     slug: 'eletro-span',
@@ -855,7 +855,7 @@ export const produtos: Produto[] = [
   {
     id: '32',
     nome: 'Querosene',
-    categoria: 'Químicos',
+    categoria: 'Industrial',
     descricao: 'Querosene para limpeza industrial, lubrificação e uso técnico.',
     icone: '🔧',
     slug: 'querosene',
@@ -1801,7 +1801,7 @@ export const produtos: Produto[] = [
   {
     id: '77',
     nome: 'Span Xispa Incolor',
-    categoria: 'Pós Obra',
+    categoria: 'Industrial',
     descricao: 'Removedor ácido incolor para limpeza de pisos e revestimentos pós-obra.',
     icone: '🏗️',
     slug: 'span-xispa-incolor',
