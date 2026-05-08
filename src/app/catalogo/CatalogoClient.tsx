@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import Link from 'next/link'
 import { produtos, categorias, categoriaBadge, type Categoria } from '@/data/produtos'
 
 const categoriaIcones: Record<string, string> = {
@@ -148,13 +149,15 @@ export default function CatalogoClient() {
                   key={produto.id}
                   className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-[#1a6b3a]/30 transition-all duration-300 overflow-hidden flex flex-col group"
                 >
-                  {/* Icon area */}
-                  <div className="flex items-center justify-center h-28 text-5xl select-none"
-                    style={{ backgroundColor: '#e8f5ee' }}>
-                    <span className="group-hover:scale-110 transition-transform duration-300 inline-block">
-                      {produto.icone}
-                    </span>
-                  </div>
+                  {/* Icon area — clicks to product page */}
+                  <Link href={`/catalogo/${produto.slug}`} className="block">
+                    <div className="flex items-center justify-center h-28 text-5xl select-none"
+                      style={{ backgroundColor: '#e8f5ee' }}>
+                      <span className="group-hover:scale-110 transition-transform duration-300 inline-block">
+                        {produto.icone}
+                      </span>
+                    </div>
+                  </Link>
 
                   <div className="p-5 flex flex-col flex-1">
                     <span
@@ -181,6 +184,13 @@ export default function CatalogoClient() {
                       </svg>
                       Solicitar Orçamento
                     </a>
+                    <Link
+                      href={`/catalogo/${produto.slug}`}
+                      className="flex items-center justify-center gap-1 font-display font-semibold py-2 px-4 rounded-xl text-sm transition-colors duration-200 border mt-2"
+                      style={{ borderColor: '#1a6b3a', color: '#1a6b3a' }}
+                    >
+                      Ver detalhes →
+                    </Link>
                   </div>
                 </div>
               )
