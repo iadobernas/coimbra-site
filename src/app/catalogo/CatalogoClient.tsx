@@ -47,7 +47,7 @@ export default function CatalogoClient() {
             Precisa de ajuda para escolher? Fale com nosso especialista →
           </p>
           <a
-            href="https://wa.me/5531347415333?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20para%20escolher%20um%20produto."
+            href="https://wa.me/5531934741533?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20para%20escolher%20um%20produto."
             target="_blank"
             rel="noopener noreferrer"
             className="flex-shrink-0 text-xs font-bold px-4 py-2 rounded-lg text-white transition-colors"
@@ -142,7 +142,7 @@ export default function CatalogoClient() {
               const msg = encodeURIComponent(
                 `Olá! Tenho interesse no produto ${produto.nome}. Gostaria de mais informações.`
               )
-              const waUrl = `https://wa.me/5531347415333?text=${msg}`
+              const waUrl = `https://wa.me/5531934741533?text=${msg}`
 
               return (
                 <div

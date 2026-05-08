@@ -5,7 +5,7 @@ import ContactForm from './ContactForm'
 export const metadata: Metadata = {
   title: 'Contato | Coimbra Produtos de Limpeza',
   description:
-    'Entre em contato com a Coimbra. Av. Brigadeiro Eduardo Gomes, 1472, Glória, Belo Horizonte/MG. Telefone: (31) 3474-1533. Atendimento de segunda a sexta.',
+    'Entre em contato com a Coimbra. Av. Brigadeiro Eduardo Gomes, 1472, Glória, Belo Horizonte/MG. Telefone: (31) 93474-1533. Atendimento de segunda a sexta.',
 }
 
 export default function ContatoPage() {
@@ -48,10 +48,10 @@ export default function ContatoPage() {
                   label="Telefone"
                   content={
                     <a
-                      href="tel:+553134741533"
+                      href="tel:+5531934741533"
                       className="transition-colors hover:text-[#1a6b3a]"
                     >
-                      (31) 3474-1533
+                      (31) 93474-1533
                     </a>
                   }
                 />
@@ -85,7 +85,7 @@ export default function ContatoPage() {
               </div>
 
               <a
-                href="https://wa.me/5531347415333"
+                href="https://wa.me/5531934741533"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 text-white font-bold py-4 px-6 rounded-xl w-full text-lg transition-colors duration-200 bg-[#25d366] hover:bg-[#1ebe5d]"

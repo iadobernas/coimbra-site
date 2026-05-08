@@ -41,11 +41,11 @@ export default function Header() {
             Seg a Sex &nbsp;·&nbsp; 08h às 18h
           </span>
           <div className="flex items-center gap-6">
-            <a href="tel:+553134741533" className="flex items-center gap-1.5 text-white/70 hover:text-white transition-colors">
+            <a href="tel:+5531934741533" className="flex items-center gap-1.5 text-white/70 hover:text-white transition-colors">
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              (31) 3474-1533
+              (31) 93474-1533
             </a>
             <a href="mailto:vendas@coimbra.ind.br" className="flex items-center gap-1.5 text-white/70 hover:text-white transition-colors">
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,7 +104,7 @@ export default function Header() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center">
             <a
-              href="https://wa.me/5531347415333"
+              href="https://wa.me/5531934741533"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-white font-display font-bold text-sm px-5 py-2.5 rounded-xl transition-all duration-200 hover:opacity-90 hover:shadow-lg"
@@ -191,7 +191,7 @@ export default function Header() {
         {/* Drawer footer */}
         <div className="px-4 pb-6 space-y-3">
           <a
-            href="https://wa.me/5531347415333"
+            href="https://wa.me/5531934741533"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 text-white font-bold py-4 rounded-xl w-full"

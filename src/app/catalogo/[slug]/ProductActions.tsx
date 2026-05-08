@@ -9,8 +9,8 @@ export default function ProductActions({ produto }: { produto: Produto }) {
   const msg = encodeURIComponent(
     `Olá! Tenho interesse no produto ${produto.nome} (${embalagem}). Gostaria de um orçamento.`
   )
-  const waUrl = `https://wa.me/5531347415333?text=${msg}`
-  const especialistaUrl = `https://wa.me/5531347415333?text=${encodeURIComponent(
+  const waUrl = `https://wa.me/5531934741533?text=${msg}`
+  const especialistaUrl = `https://wa.me/5531934741533?text=${encodeURIComponent(
     `Olá! Gostaria de falar com um especialista sobre o produto ${produto.nome}.`
   )}`
 

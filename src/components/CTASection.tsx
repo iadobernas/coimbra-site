@@ -29,7 +29,7 @@ export default function CTASection() {
             Ver Catálogo Completo
           </Link>
           <a
-            href="https://wa.me/5531347415333"
+            href="https://wa.me/5531934741533"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 font-bold px-8 py-4 rounded-xl border-2 transition-all duration-200 hover:-translate-y-0.5 text-lg"
@@ -57,13 +57,13 @@ export default function CTASection() {
           </a>
           <span className="text-gray-200">|</span>
           <a
-            href="tel:+553134741533"
+            href="tel:+5531934741533"
             className="flex items-center gap-2 text-gray-400 hover:text-[#1a6b3a] transition-colors duration-200 text-sm font-medium"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
-            (31) 3474-1533
+            (31) 93474-1533
           </a>
         </div>
       </div>
