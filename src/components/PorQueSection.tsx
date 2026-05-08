@@ -45,7 +45,7 @@ export default function PorQueSection() {
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-14">
+        <div className="text-center mb-8 md:mb-14">
           <p className="text-[#c0392b] font-display font-bold text-sm tracking-widest uppercase mb-3">
             Nossos Diferenciais
           </p>
@@ -62,11 +62,10 @@ export default function PorQueSection() {
           {diferenciais.map((d) => (
             <div
               key={d.titulo}
-              className="rounded-2xl p-5 md:p-8 border transition-all duration-300 hover:-translate-y-1"
+              className="rounded-2xl p-5 md:p-8 border md:backdrop-blur-sm md:transition-all md:duration-300 md:hover:-translate-y-1"
               style={{
                 backgroundColor: 'rgba(255,255,255,0.08)',
                 borderColor: 'rgba(255,255,255,0.15)',
-                backdropFilter: 'blur(8px)',
               }}
             >
               <div
