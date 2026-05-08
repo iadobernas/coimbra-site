@@ -1,5 +1,12 @@
+import type { Metadata } from 'next'
 import PageHero from '@/components/PageHero'
 import ContactForm from './ContactForm'
+
+export const metadata: Metadata = {
+  title: 'Contato | Coimbra Produtos de Limpeza',
+  description:
+    'Entre em contato com a Coimbra. Av. Brigadeiro Eduardo Gomes, 1472, Glória, Belo Horizonte/MG. Telefone: (31) 3474-1533. Atendimento de segunda a sexta.',
+}
 
 export default function ContatoPage() {
   return (

@@ -18,20 +18,18 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Coimbra | Tudo para Limpeza',
+  title: 'Coimbra | Tudo para Limpeza - Produtos de Higiene desde 1972',
   description:
-    'Indústria mineira especializada em produtos de higiene e limpeza desde 1972. Mais de 50 produtos para uso doméstico, profissional e industrial. Localizada na Av. Brigadeiro Eduardo Gomes, 1472 – Glória, Belo Horizonte/MG.',
-  keywords: 'produtos de limpeza, higiene, desinfetante, detergente, Belo Horizonte, Minas Gerais, Glória, atacado, varejo',
+    'Indústria mineira especializada em produtos de higiene e limpeza desde 1972. Mais de 50 produtos para uso doméstico, profissional e industrial. Belo Horizonte, MG.',
+  keywords:
+    'produtos de limpeza, higiene, detergente, desinfetante, BH, Belo Horizonte, limpeza industrial, limpeza profissional, Coimbra',
   openGraph: {
-    title: 'Coimbra Produtos de Limpeza — Tudo para Limpeza',
-    description:
-      'Mais de 53 anos fabricando produtos de higiene e limpeza para o lar, empresas e indústrias de Minas Gerais.',
-    type: 'website',
-    locale: 'pt_BR',
+    title: 'Coimbra | Tudo para Limpeza',
+    description: 'Mais de 53 anos fabricando produtos de higiene e limpeza em Belo Horizonte.',
+    url: 'https://coimbra-site-production.up.railway.app',
     siteName: 'Coimbra Produtos de Limpeza',
-  },
-  icons: {
-    icon: '/favicon.svg',
+    locale: 'pt_BR',
+    type: 'website',
   },
 }
 

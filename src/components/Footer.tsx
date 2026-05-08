@@ -58,7 +58,7 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
 
           {/* Col 1 — Logo + description */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
             <Image
               src="/logo.png.png"
               alt="Coimbra Produtos de Limpeza"

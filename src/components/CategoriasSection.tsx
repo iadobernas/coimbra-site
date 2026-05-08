@@ -50,8 +50,8 @@ export default function CategoriasSection() {
             <Link
               href="/catalogo"
               key={cat.titulo}
-              className={`group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col border-t-4 ${
-                cat.span === 2 ? 'md:col-span-2' : ''
+              className={`group bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden flex flex-col border-t-4 cursor-pointer ${
+                cat.span === 2 ? 'sm:col-span-2 md:col-span-2' : ''
               }`}
               style={{ borderTopColor: cat.cor }}
             >

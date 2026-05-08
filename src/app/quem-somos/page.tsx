@@ -1,4 +1,11 @@
+import type { Metadata } from 'next'
 import PageHero from '@/components/PageHero'
+
+export const metadata: Metadata = {
+  title: 'Quem Somos | Coimbra Produtos de Limpeza',
+  description:
+    'Conheça a história da Coimbra, indústria mineira fundada em 1972, especializada em produtos de higiene e limpeza com mais de 53 anos de tradição em Belo Horizonte.',
+}
 
 const timeline = [
   { ano: '1972', titulo: 'Fundação', desc: 'A Coimbra nasce em Belo Horizonte com o propósito de fabricar produtos de limpeza de qualidade para o mercado mineiro.' },
