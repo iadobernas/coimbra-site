@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import HeroDecoration from './HeroDecoration'
+import { useState, useEffect } from 'react'
 
 const hexSvg =
   "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='52'%3E%3Cpolygon points='30,1 59,17 59,44 30,51 1,44 1,17' fill='none' stroke='white' stroke-width='0.6' opacity='0.06'/%3E%3C/svg%3E\")"
@@ -9,11 +10,22 @@ const hexSvg =
 const gradient = 'linear-gradient(135deg, #0d4a24 0%, #1a6b3a 60%, #1e7d42 100%)'
 
 export default function HeroSection() {
+  const [heroImage, setHeroImage] = useState<string | null>(null)
+
+  useEffect(() => {
+    const img = localStorage.getItem('hero-image')
+    if (img) setHeroImage(img)
+  }, [])
+
   return (
     <section
       className="relative overflow-hidden flex flex-col min-h-screen"
       style={{
-        backgroundImage: `${hexSvg}, ${gradient}`,
+        backgroundImage: heroImage
+          ? `linear-gradient(rgba(13,74,36,0.78), rgba(13,74,36,0.78)), url(${heroImage})`
+          : `${hexSvg}, ${gradient}`,
+        backgroundSize: heroImage ? 'cover' : 'auto',
+        backgroundPosition: heroImage ? 'center' : 'auto',
       }}
     >
       {/* Red top accent */}
@@ -45,10 +57,10 @@ export default function HeroSection() {
               <h1
                 className="font-display font-black text-white leading-[1.05] tracking-tight mb-4 text-4xl sm:text-5xl md:text-5xl lg:text-6xl"
               >
-                Limpeza que
+                Coimbra: tradição
                 <br />
                 <span className="relative inline-block text-white">
-                  transforma
+                  que limpa de verdade
                   <span
                     className="absolute -bottom-2 left-0 right-0 h-1.5 rounded-full"
                     style={{ backgroundColor: '#c0392b' }}
@@ -58,8 +70,8 @@ export default function HeroSection() {
 
               {/* Subtitle */}
               <p className="text-white text-base md:text-xl leading-relaxed mb-8 max-w-lg opacity-80">
-                Mais de 53 anos fabricando produtos de higiene e limpeza para o lar,
-                empresas e indústrias de Minas Gerais.
+                Desde 1972 fabricamos produtos de limpeza em BH. Qualidade que você já conhece,
+                agora mais perto de você.
               </p>
 
               {/* CTA buttons */}

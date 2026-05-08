@@ -8,7 +8,7 @@ const segmentos = [
     iconoBg: '#1a6b3a',
     icone: '🏠',
     tag: 'Residencial',
-    titulo: 'Para o seu lar',
+    titulo: 'Para a sua casa',
     descricao:
       'Produtos seguros e eficientes formulados para o uso diário na sua casa. Limpadores multiuso, desinfetantes, detergentes e muito mais — tudo com qualidade que sua família merece.',
     items: ['Desinfetantes', 'Detergentes', 'Limpadores multiuso', 'Perfumadores'],

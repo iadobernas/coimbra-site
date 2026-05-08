@@ -1,25 +1,101 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import { produtos, categorias, categoriaBadge, type Categoria } from '@/data/produtos'
 
-const categoriaIcones: Record<string, string> = {
-  Todos: '📦',
-  Automotivo: '🚗',
-  Cozinha: '🍽️',
-  Industrial: '🏭',
-  'Limpeza e Conservação': '🧽',
-  Lavanderia: '🧺',
-  'Pós Obra': '🏗️',
-  Químicos: '🧪',
-  'Tratamento de Piso': '✨',
-  Revenda: '🛒',
+// SVG icons para os filtros de categoria
+const CatIcon = ({ cat }: { cat: string }) => {
+  const cls = 'w-3.5 h-3.5'
+  switch (cat) {
+    case 'Todos':
+      return (
+        <svg className={cls} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+        </svg>
+      )
+    case 'Automotivo':
+      return (
+        <svg className={cls} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+            d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0zM13 6H5L3 13v4h1m5 0h6m2 0h1v-4l-2-7H9" />
+        </svg>
+      )
+    case 'Cozinha':
+      return (
+        <svg className={cls} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+            d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+        </svg>
+      )
+    case 'Industrial':
+      return (
+        <svg className={cls} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065zM15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      )
+    case 'Limpeza e Conservação':
+      return (
+        <svg className={cls} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+            d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+        </svg>
+      )
+    case 'Lavanderia':
+      return (
+        <svg className={cls} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+            d="M12 3c-3.5 4.5-6 8-6 11a6 6 0 0012 0c0-3-2.5-6.5-6-11z" />
+        </svg>
+      )
+    case 'Pós Obra':
+      return (
+        <svg className={cls} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+            d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+        </svg>
+      )
+    case 'Químicos':
+      return (
+        <svg className={cls} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+            d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+        </svg>
+      )
+    case 'Tratamento de Piso':
+      return (
+        <svg className={cls} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+            d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm10 0a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zm10 0a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z" />
+        </svg>
+      )
+    case 'Revenda':
+      return (
+        <svg className={cls} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
+            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      )
+    default:
+      return null
+  }
 }
 
 export default function CatalogoClient() {
   const [categoriaAtiva, setCategoriaAtiva] = useState<Categoria>('Todos')
   const [busca, setBusca] = useState('')
+  const [fading, setFading] = useState(false)
+  const [productImages, setProductImages] = useState<Record<string, string>>({})
+
+  useEffect(() => {
+    const imgs: Record<string, string> = {}
+    produtos.forEach((p) => {
+      const img = localStorage.getItem(`produto-img-${p.slug}`)
+      if (img) imgs[p.slug] = img
+    })
+    setProductImages(imgs)
+  }, [])
 
   const produtosFiltrados = useMemo(() => {
     const termo = busca.toLowerCase().trim()
@@ -37,6 +113,15 @@ export default function CatalogoClient() {
     })
     return map
   }, [])
+
+  const handleCategoryChange = useCallback((cat: Categoria) => {
+    if (cat === categoriaAtiva) return
+    setFading(true)
+    setTimeout(() => {
+      setCategoriaAtiva(cat)
+      setFading(false)
+    }, 150)
+  }, [categoriaAtiva])
 
   return (
     <div className="bg-[#f9fafb] min-h-screen">
@@ -83,34 +168,36 @@ export default function CatalogoClient() {
           )}
         </div>
 
-        {/* Category pills with icon + count */}
-        <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide mb-8">
-          {categorias.map((cat) => {
-            const active = categoriaAtiva === cat
-            const count = contagemPorCategoria[cat] ?? 0
-            return (
-              <button
-                key={cat}
-                onClick={() => setCategoriaAtiva(cat)}
-                className={`flex-shrink-0 flex items-center gap-1.5 px-4 py-2.5 rounded-full text-sm font-display font-semibold transition-all duration-200 border ${
-                  active
-                    ? 'text-white border-[#1a6b3a] shadow-md'
-                    : 'bg-white text-gray-600 border-gray-200 hover:border-[#1a6b3a] hover:text-[#1a6b3a]'
-                }`}
-                style={active ? { backgroundColor: '#1a6b3a' } : {}}
-              >
-                <span>{categoriaIcones[cat]}</span>
-                <span>{cat}</span>
-                <span
-                  className={`text-xs px-1.5 py-0.5 rounded-full font-bold ${
-                    active ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-500'
+        {/* Category filter pills */}
+        <div className="overflow-x-auto pb-2 -mx-4 px-4 mb-8">
+          <div className="flex gap-2 min-w-max md:min-w-0 md:flex-wrap">
+            {categorias.map((cat) => {
+              const active = categoriaAtiva === cat
+              const count = contagemPorCategoria[cat] ?? 0
+              return (
+                <button
+                  key={cat}
+                  onClick={() => handleCategoryChange(cat)}
+                  className={`flex-shrink-0 flex items-center gap-1.5 px-4 py-2.5 rounded-full text-sm font-display font-semibold transition-all duration-200 border ${
+                    active
+                      ? 'text-white border-[#1a6b3a] shadow-md'
+                      : 'bg-white text-gray-600 border-gray-200 hover:border-[#1a6b3a] hover:text-[#1a6b3a]'
                   }`}
+                  style={active ? { backgroundColor: '#1a6b3a' } : {}}
                 >
-                  {count}
-                </span>
-              </button>
-            )
-          })}
+                  <CatIcon cat={cat} />
+                  <span>{cat}</span>
+                  <span
+                    className={`text-xs px-1.5 py-0.5 rounded-full font-bold ${
+                      active ? 'bg-white/20 text-white' : 'bg-gray-100 text-gray-500'
+                    }`}
+                  >
+                    {count}
+                  </span>
+                </button>
+              )
+            })}
+          </div>
         </div>
 
         {/* Result count */}
@@ -124,7 +211,7 @@ export default function CatalogoClient() {
         {produtosFiltrados.length === 0 && (
           <div className="text-center py-20">
             <div className="text-6xl mb-4">🔍</div>
-            <p className="text-gray-500 text-lg mb-2">Nenhum produto encontrado para "{busca}"</p>
+            <p className="text-gray-500 text-lg mb-2">Nenhum produto encontrado para &quot;{busca}&quot;</p>
             <button
               onClick={() => { setBusca(''); setCategoriaAtiva('Todos') }}
               className="mt-3 text-sm font-semibold text-[#1a6b3a] hover:underline"
@@ -134,9 +221,13 @@ export default function CatalogoClient() {
           </div>
         )}
 
-        {/* Product grid */}
+        {/* Product grid with fade transition */}
         {produtosFiltrados.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-opacity duration-300 ${
+              fading ? 'opacity-0' : 'opacity-100'
+            }`}
+          >
             {produtosFiltrados.map((produto) => {
               const badge = categoriaBadge[produto.categoria] ?? { bg: '#f3f4f6', color: '#374151' }
               const msg = encodeURIComponent(
@@ -149,13 +240,23 @@ export default function CatalogoClient() {
                   key={produto.id}
                   className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-[#1a6b3a]/30 transition-all duration-300 overflow-hidden flex flex-col group"
                 >
-                  {/* Icon area — clicks to product page */}
+                  {/* Image/icon area */}
                   <Link href={`/catalogo/${produto.slug}`} className="block">
-                    <div className="flex items-center justify-center h-28 text-5xl select-none"
-                      style={{ backgroundColor: '#e8f5ee' }}>
-                      <span className="group-hover:scale-110 transition-transform duration-300 inline-block">
-                        {produto.icone}
-                      </span>
+                    <div
+                      className="flex items-center justify-center h-28 select-none overflow-hidden"
+                      style={{ backgroundColor: '#e8f5ee' }}
+                    >
+                      {productImages[produto.slug] ? (
+                        <img
+                          src={productImages[produto.slug]}
+                          alt={produto.nome}
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <span className="text-5xl group-hover:scale-110 transition-transform duration-300 inline-block">
+                          {produto.icone}
+                        </span>
+                      )}
                     </div>
                   </Link>
 

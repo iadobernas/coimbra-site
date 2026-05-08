@@ -4,6 +4,7 @@ import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import WhatsAppFloat from '@/components/WhatsAppFloat'
+import ScrollToTop from '@/components/ScrollToTop'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -48,6 +49,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppFloat />
+        <ScrollToTop />
       </body>
     </html>
   )

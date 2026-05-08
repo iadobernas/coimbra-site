@@ -43,16 +43,6 @@ export default function Footer() {
 
   return (
     <footer>
-      {/* ── Slogan strip ──────────────────────────────────────────────── */}
-      <div className="py-6 px-4 text-center" style={{ backgroundColor: '#0a3319' }}>
-        <p
-          className="font-display font-black text-sm md:text-base tracking-[0.4em] uppercase"
-          style={{ color: 'rgba(255,255,255,0.35)' }}
-        >
-          TUDO PARA LIMPEZA &nbsp;·&nbsp; DESDE 1972
-        </p>
-      </div>
-
       {/* ── Main footer ───────────────────────────────────────────────── */}
       <div className="text-white py-14 px-4 sm:px-6" style={{ backgroundColor: '#1a6b3a' }}>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">

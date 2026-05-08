@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { produtos, categoriaBadge } from '@/data/produtos'
 import ProductActions from './ProductActions'
+import ProductImage from './ProductImage'
 
 export async function generateStaticParams() {
   return produtos.map((p) => ({ slug: p.slug }))
@@ -68,22 +69,14 @@ export default async function ProdutoPage({
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
 
-            {/* Left — image placeholder */}
+            {/* Left — product image */}
             <div>
-              <div
-                className="w-full aspect-square max-w-md mx-auto rounded-2xl flex flex-col items-center justify-center relative overflow-hidden"
-                style={{ backgroundColor: '#e8f5ee' }}
-              >
-                <span className="text-[8rem] leading-none select-none">{produto.icone}</span>
-                <p className="text-gray-400 text-sm mt-4 font-medium">Foto em breve</p>
-                {/* Category badge overlay */}
-                <span
-                  className="absolute top-4 left-4 text-xs font-display font-bold px-3 py-1.5 rounded-full"
-                  style={{ backgroundColor: badge.bg, color: badge.color }}
-                >
-                  {produto.categoria}
-                </span>
-              </div>
+              <ProductImage
+                slug={produto.slug}
+                icone={produto.icone}
+                categoria={produto.categoria}
+                badge={badge}
+              />
             </div>
 
             {/* Right — product info */}

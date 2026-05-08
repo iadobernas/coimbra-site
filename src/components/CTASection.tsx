@@ -4,17 +4,12 @@ export default function CTASection() {
   return (
     <section className="bg-white border-t-4 border-[#1a6b3a] py-12 md:py-20 px-4 sm:px-6">
       <div className="max-w-3xl mx-auto text-center">
-        <p className="text-[#c0392b] font-display font-bold text-sm tracking-widest uppercase mb-4">
-          Próximo Passo
-        </p>
         <h2 className="font-display text-3xl md:text-5xl font-black text-gray-900 mb-4 leading-tight">
-          Pronto para transformar
-          <br />
-          <span style={{ color: '#1a6b3a' }}>sua limpeza?</span>
+          <span style={{ color: '#1a6b3a' }}>Fale com a gente</span>
         </h2>
         <p className="text-gray-500 text-lg mb-10 max-w-xl mx-auto">
-          Fale com nossa equipe e encontre o produto ideal para você.
-          Atendimento personalizado de segunda a sexta, das 08h às 18h.
+          Nossa equipe atende de segunda a sexta, das 08h às 18h.
+          Sábados das 08h às 13h na loja.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
