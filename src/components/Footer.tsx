@@ -55,7 +55,7 @@ export default function Footer() {
 
       {/* ── Main footer ───────────────────────────────────────────────── */}
       <div className="text-white py-14 px-4 sm:px-6" style={{ backgroundColor: '#1a6b3a' }}>
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-10">
 
           {/* Col 1 — Logo + description */}
           <div className="md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left">
@@ -82,7 +82,7 @@ export default function Footer() {
           {/* Col 2 — Quick links */}
           <div>
             <h4
-              className="font-display font-black text-sm tracking-widest uppercase mb-5"
+              className="font-display font-black text-sm tracking-widest uppercase mb-4 text-center md:text-left"
               style={{ color: 'rgba(255,255,255,0.5)' }}
             >
               Links Rápidos
@@ -105,7 +105,7 @@ export default function Footer() {
           {/* Col 3 — Contact */}
           <div>
             <h4
-              className="font-display font-black text-sm tracking-widest uppercase mb-5"
+              className="font-display font-black text-sm tracking-widest uppercase mb-4 text-center md:text-left"
               style={{ color: 'rgba(255,255,255,0.5)' }}
             >
               Contato
@@ -139,7 +139,7 @@ export default function Footer() {
           {/* Col 4 — Social */}
           <div>
             <h4
-              className="font-display font-black text-sm tracking-widest uppercase mb-5"
+              className="font-display font-black text-sm tracking-widest uppercase mb-4 text-center md:text-left"
               style={{ color: 'rgba(255,255,255,0.5)' }}
             >
               Redes Sociais

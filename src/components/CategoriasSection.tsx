@@ -55,7 +55,7 @@ export default function CategoriasSection() {
               }`}
               style={{ borderTopColor: cat.cor }}
             >
-              <div className="p-8 flex flex-col flex-1">
+              <div className="p-5 md:p-8 flex flex-col flex-1">
                 {/* Icon circle */}
                 <div
                   className="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-5 transition-transform duration-300 group-hover:scale-110"

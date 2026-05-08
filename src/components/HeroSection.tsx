@@ -21,7 +21,7 @@ export default function HeroSection() {
 
       {/* Main content */}
       <div className="relative flex-1 flex items-center">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-0 w-full">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-14 md:py-0 w-full">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
 
             {/* ── Left column (60%) ── */}
@@ -43,8 +43,7 @@ export default function HeroSection() {
 
               {/* Headline */}
               <h1
-                className="font-display font-black text-white leading-[1.05] tracking-tight mb-6"
-                style={{ fontSize: 'clamp(2.8rem, 6vw, 5rem)' }}
+                className="font-display font-black text-white leading-[1.05] tracking-tight mb-4 text-4xl sm:text-5xl md:text-5xl lg:text-6xl"
               >
                 Limpeza que
                 <br />
@@ -58,7 +57,7 @@ export default function HeroSection() {
               </h1>
 
               {/* Subtitle */}
-              <p className="text-white text-lg md:text-xl leading-relaxed mb-10 max-w-lg opacity-80">
+              <p className="text-white text-base md:text-xl leading-relaxed mb-8 max-w-lg opacity-80">
                 Mais de 53 anos fabricando produtos de higiene e limpeza para o lar,
                 empresas e indústrias de Minas Gerais.
               </p>

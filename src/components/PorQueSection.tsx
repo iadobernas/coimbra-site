@@ -37,7 +37,7 @@ const diferenciais = [
 export default function PorQueSection() {
   return (
     <section
-      className="relative overflow-hidden py-20 md:py-28"
+      className="relative overflow-hidden py-12 md:py-28"
       style={{ backgroundColor: '#0d4a24', backgroundImage: hexPattern }}
     >
       {/* Red top accent */}
@@ -49,20 +49,20 @@ export default function PorQueSection() {
           <p className="text-[#c0392b] font-display font-bold text-sm tracking-widest uppercase mb-3">
             Nossos Diferenciais
           </p>
-          <h2 className="font-display text-4xl md:text-5xl font-black text-white mb-4">
+          <h2 className="font-display text-3xl md:text-5xl font-black text-white mb-3">
             Por que escolher a Coimbra?
           </h2>
-          <p className="text-white/70 text-lg max-w-xl mx-auto">
+          <p className="text-white/70 text-base md:text-lg max-w-xl mx-auto hidden sm:block">
             Mais de meio século fabricando produtos de qualidade para quem exige o melhor
           </p>
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-14">
           {diferenciais.map((d) => (
             <div
               key={d.titulo}
-              className="rounded-2xl p-8 border transition-all duration-300 hover:-translate-y-1"
+              className="rounded-2xl p-5 md:p-8 border transition-all duration-300 hover:-translate-y-1"
               style={{
                 backgroundColor: 'rgba(255,255,255,0.08)',
                 borderColor: 'rgba(255,255,255,0.15)',
@@ -89,8 +89,8 @@ export default function PorQueSection() {
             borderColor: 'rgba(255,255,255,0.1)',
           }}
         >
-          <p className="font-display font-black text-sm tracking-[0.3em] uppercase text-white/50">
-            ANVISA &nbsp;·&nbsp; VIGILÂNCIA SANITÁRIA &nbsp;·&nbsp; QUALIDADE GARANTIDA &nbsp;·&nbsp; DESDE 1972
+          <p className="font-display font-black text-xs md:text-sm tracking-widest md:tracking-[0.3em] uppercase text-white/50">
+            ANVISA · VIGILÂNCIA SANITÁRIA · QUALIDADE GARANTIDA · DESDE 1972
           </p>
         </div>
       </div>
